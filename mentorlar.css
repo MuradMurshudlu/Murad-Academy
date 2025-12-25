@@ -1,0 +1,150 @@
+:root {
+    --bg-dark: #020617;
+    --accent: #38BDF8;
+    --card-bg: rgba(15, 23, 42, 0.9);
+    --text-white: #F8FAFC;
+    --text-gray: #94A3B8;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mentor-header {
+    text-align: center;
+    padding: 60px 0 20px;
+}
+
+.back-btn { 
+    color: var(--accent); 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 14px;
+}
+
+.section-title { 
+    font-size: 42px; 
+    font-weight: 800; 
+    margin-top: 15px; 
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #38BDF8, #818CF8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mentor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5% 100px;
+}
+
+/* KART DİZAYNI */
+.mentor-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 35px;
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    gap: 60px;
+    padding: 50px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* SOL TƏRƏF */
+.card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mentor-img-wrapper {
+    position: relative;
+    width: 280px;
+    height: 320px;
+}
+
+.mentor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    z-index: 2;
+    position: relative;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.img-glow {
+    position: absolute;
+    top: -15px; left: -15px; right: -15px; bottom: -15px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    filter: blur(30px);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* SOSİAL İKONLAR */
+.mentor-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+    font-size: 22px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon.linkedin:hover { background: #0077b5; color: #fff; border-color: #0077b5; box-shadow: 0 0 20px rgba(0, 119, 181, 0.4); transform: translateY(-5px); }
+.social-icon.github:hover { background: #333; color: #fff; border-color: #444; box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
+.social-icon.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; border-color: transparent; box-shadow: 0 0 20px rgba(220, 39, 67, 0.4); transform: translateY(-5px); }
+
+/* SAĞ TƏRƏF */
+.card-right { flex: 1; }
+.role-badge { background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 6px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; }
+.card-right h2 { font-size: 40px; margin: 20px 0; color: #fff; }
+.mentor-bio { color: var(--text-gray); line-height: 1.7; font-size: 16px; margin-bottom: 30px; }
+
+/* STATS */
+.mentor-stats {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    margin-bottom: 35px;
+}
+
+.stat-num { display: block; font-size: 26px; font-weight: 800; color: var(--accent); }
+.stat-label { font-size: 12px; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
+
+/* SKILLS */
+.skill-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+.skill-tags span { background: rgba(255, 255, 255, 0.03); padding: 8px 18px; border-radius: 30px; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.08); transition: 0.3s; }
+.skill-tags span:hover { background: rgba(56, 189, 248, 0.1); border-color: var(--accent); color: #fff; }
+
+@media (max-width: 900px) {
+    .mentor-card { flex-direction: column; align-items: center; text-align: center; padding: 40px 30px; }
+    .mentor-stats { justify-content: center; }
+    .skill-tags { justify-content: center; }
+}

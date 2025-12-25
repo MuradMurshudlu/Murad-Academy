@@ -1,0 +1,206 @@
+:root {
+    --bg: #020617;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --accent: #38BDF8;
+    --text-main: #F8FAFC;
+    --text-dim: #94A3B8;
+    --whatsapp: #25D366;
+    --insta: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.contact-header {
+    text-align: center;
+    padding: 100px 5% 50px;
+}
+
+.back-btn { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+.back-btn:hover { opacity: 0.8; letter-spacing: 1px; }
+
+.section-title { font-size: 48px; font-weight: 800; margin: 20px 0; }
+.gradient-text {
+    background: linear-gradient(90deg, #38BDF8, #818CF8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    gap: 40px;
+    padding: 0 5%;
+}
+
+/* SIDEBAR MƏLUMATLAR */
+.contact-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+   background: var(--card-bg);
+    padding: 25px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    position: relative; /* Bu mütləq olmalıdır */
+    overflow: hidden;   /* İşığın kartdan kənara çıxmaması üçün */
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 20px;
+}
+
+.info-text h4 { margin: 0; font-size: 17px; color: white; }
+.info-text p { margin: 5px 0 0; color: var(--text-dim); font-size: 14px; }
+
+/* SOSİAL İKONLAR - PROFESSIONAL */
+.social-wrapper {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.social-wrapper span { display: block; margin-bottom: 15px; font-size: 14px; font-weight: 600; color: var(--text-dim); }
+
+.social-icons-row { display: flex; gap: 15px; }
+
+.social-box {
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-box.whatsapp:hover {
+    background: var(--whatsapp);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
+    transform: translateY(-5px);
+}
+
+.social-box.instagram:hover {
+    background: var(--insta);
+    box-shadow: 0 0 25px rgba(220, 39, 67, 0.4);
+    transform: translateY(-5px);
+}
+
+/* FORM DİZAYNI */
+.form-wrapper { flex: 1.5; }
+
+.contact-form {
+    background: var(--card-bg);
+    padding: 45px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+}
+
+.input-group { margin-bottom: 25px; }
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.glow-button {
+    width: 100%;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.4s;
+}
+
+.glow-button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .contact-container { flex-direction: column; }
+    .section-title { font-size: 36px; }
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+}
+
+.info-card:hover::before {
+    opacity: 1; /* Hover edəndə arxadakı rəng görünür */
+}
+
+.info-icon {
+    /* İkonun rəngini bir az daha parlaq edək */
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.1);
+    background: var(--accent);
+    color: var(--bg);
+}
